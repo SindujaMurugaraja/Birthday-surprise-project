@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Final Surprise 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#ff9ecf,#f8a5ff,#c77dff,#8f94fb);
+    background-size:400% 400%;
+    animation:bg 15s ease infinite;
+    position:relative;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+/* Floating Hearts */
+
+.hearts span{
+    position:absolute;
+    bottom:-100px;
+    font-size:25px;
+    animation:float 12s linear infinite;
+    opacity:.8;
+}
+
+.hearts span:nth-child(1){left:5%;animation-delay:0s;}
+.hearts span:nth-child(2){left:12%;animation-delay:2s;}
+.hearts span:nth-child(3){left:20%;animation-delay:5s;}
+.hearts span:nth-child(4){left:30%;animation-delay:1s;}
+.hearts span:nth-child(5){left:40%;animation-delay:6s;}
+.hearts span:nth-child(6){left:52%;animation-delay:3s;}
+.hearts span:nth-child(7){left:62%;animation-delay:4s;}
+.hearts span:nth-child(8){left:72%;animation-delay:7s;}
+.hearts span:nth-child(9){left:82%;animation-delay:2s;}
+.hearts span:nth-child(10){left:92%;animation-delay:5s;}
+
+@keyframes float{
+
+from{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+to{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* Balloons */
+
+.balloon{
+
+position:absolute;
+font-size:55px;
+animation:balloon 9s ease-in-out infinite;
+
+}
+
+.b1{left:5%;top:75%;}
+.b2{left:90%;top:70%;animation-delay:2s;}
+.b3{left:15%;top:15%;animation-delay:4s;}
+.b4{left:85%;top:20%;animation-delay:1s;}
+
+@keyframes balloon{
+
+0%,100%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+/* Card */
+
+.card{
+
+width:900px;
+max-width:92%;
+padding:55px;
+border-radius:35px;
+
+background:rgba(255,255,255,.18);
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:0 25px 70px rgba(0,0,0,.25);
+
+text-align:center;
+
+animation:fade .8s;
+
+z-index:100;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+transform:scale(1);
+
+}
+
+}
+
+h1{
+
+font-family:'Great Vibes',cursive;
+font-size:72px;
+color:white;
+margin-bottom:15px;
+
+text-shadow:0 0 15px rgba(255,255,255,.8);
+
+}
+
+h2{
+
+color:#fff;
+font-size:30px;
+margin-bottom:18px;
+
+}
+
+p{
+
+color:#fff;
+font-size:18px;
+line-height:1.9;
+margin-bottom:15px;
+
+}
+
+.gift{
+
+font-size:95px;
+
+animation:bounce 2s infinite;
+
+margin:20px;
+
+}
+
+@keyframes bounce{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+}
+
+.message{
+
+margin:35px auto;
+
+background:rgba(255,255,255,.15);
+
+padding:30px;
+
+border-radius:20px;
+
+}
+
+.message h3{
+
+color:#fff;
+margin-bottom:15px;
+font-size:28px;
+
+}
+
+.message p{
+
+font-size:17px;
+
+}
+
+.footer{
+
+margin-top:35px;
+color:white;
+font-size:15px;
+opacity:.9;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:15px 40px;
+
+border-radius:50px;
+
+background:white;
+
+color:#d63384;
+
+font-weight:700;
+
+text-decoration:none;
+
+transition:.3s;
+
+}
+
+.btn:hover{
+
+transform:translateY(-5px);
+
+background:#fff5fb;
+
+box-shadow:0 15px 35px rgba(255,255,255,.4);
+
+}
+
+.sparkles{
+
+position:absolute;
+
+font-size:22px;
+
+animation:twinkle 2s infinite;
+
+}
+
+.s1{top:8%;left:30%;}
+.s2{top:18%;right:20%;}
+.s3{bottom:15%;left:25%;}
+.s4{bottom:10%;right:28%;}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+transform:scale(.8);
+
+}
+
+50%{
+
+opacity:1;
+transform:scale(1.4);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.card{
+
+padding:35px 20px;
+
+}
+
+h1{
+
+font-size:52px;
+
+}
+
+h2{
+
+font-size:24px;
+
+}
+
+.message{
+
+padding:20px;
+
+}
+
+p{
+
+font-size:16px;
+
+}
+
+.gift{
+
+font-size:75px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="hearts">
+
+<span>💖</span>
+<span>💕</span>
+<span>💗</span>
+<span>💝</span>
+<span>💜</span>
+<span>❤️</span>
+<span>💞</span>
+<span>💘</span>
+<span>💓</span>
+<span>💖</span>
+
+</div>
+
+<div class="balloon b1">🎈</div>
+<div class="balloon b2">🎈</div>
+<div class="balloon b3">🎈</div>
+<div class="balloon b4">🎈</div>
+
+<div class="sparkles s1">✨</div>
+<div class="sparkles s2">✨</div>
+<div class="sparkles s3">✨</div>
+<div class="sparkles s4">✨</div>
+
+<div class="card">
+
+<div class="gift">
+🎁
+</div>
+
+<h1>Final Surprise</h1>
+
+<h2>💖 You Are Truly Special 💖</h2>
+
+<p>
+
+Every birthday reminds us how precious a beautiful soul can be.
+
+Today is not just another day...
+
+It is a celebration of YOU.
+
+</p>
+
+<div class="message">
+
+<h3>🌸 A Small Message 🌸</h3>
+
+<p>
+
+May your smile always shine brighter than the stars.
+
+May every dream become reality.
+
+May happiness follow you everywhere.
+
+May love surround you forever.
+
+May peace fill your heart.
+
+May this new year of your life be full of beautiful memories,
+success, laughter, good health and endless blessings.
+
+Never stop believing in yourself because you are amazing just the way you are.
+
+💖 Happy Birthday Once Again 💖
+
+</p>
+
+</div>
+
+<a href="{{ url_for('home') }}" class="btn">
+🏠 Back To Home
+</a>
+
+<div class="footer">
+
+Made with ❤️ for your Birthday Surprise
+
+</div>
+
+</div>
+
+</body>
+</html>
+

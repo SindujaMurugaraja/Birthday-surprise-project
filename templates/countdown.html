@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Countdown 🎂</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:linear-gradient(
+to bottom,
+#12001f,
+#2d0050,
+#6b00a8,
+#ff5fb2
+);
+
+overflow:hidden;
+
+}
+
+/* Floating Hearts */
+
+.hearts{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:1;
+
+}
+
+.hearts span{
+
+position:absolute;
+
+bottom:-100px;
+
+font-size:26px;
+
+animation:hearts 10s linear infinite;
+
+opacity:.8;
+
+pointer-events:none;
+
+}
+
+.hearts span:nth-child(1){left:5%;animation-delay:0s;}
+.hearts span:nth-child(2){left:15%;animation-delay:2s;}
+.hearts span:nth-child(3){left:28%;animation-delay:4s;}
+.hearts span:nth-child(4){left:40%;animation-delay:1s;}
+.hearts span:nth-child(5){left:55%;animation-delay:5s;}
+.hearts span:nth-child(6){left:68%;animation-delay:3s;}
+.hearts span:nth-child(7){left:80%;animation-delay:6s;}
+.hearts span:nth-child(8){left:92%;animation-delay:2s;}
+
+@keyframes hearts{
+
+0%{
+
+transform:translateY(0) scale(.8);
+
+opacity:0;
+
+}
+
+15%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) scale(1.4) rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+.card{
+position:relative;
+
+z-index:2;
+
+width:700px;
+max-width:90%;
+
+padding:50px;
+
+border-radius:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.2);
+
+box-shadow:
+0 0 30px rgba(255,255,255,.2),
+0 0 80px rgba(255,79,163,.4);
+
+backdrop-filter:blur(10px);
+
+}
+
+.title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+color:#ffd6ef;
+
+text-shadow:
+0 0 10px #ff4fa3,
+0 0 25px #ff4fa3;
+
+}
+
+.name{
+
+margin-top:20px;
+
+font-size:42px;
+
+font-family:'Poppins',sans-serif;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+text-transform:capitalize;
+
+color:#ffffff;
+
+text-shadow:
+0 0 8px rgba(255,255,255,.8),
+0 0 18px #ff9bd2;
+
+}
+
+.days{
+
+margin-top:25px;
+
+font-size:30px;
+
+color:#ffe66d;
+
+font-weight:bold;
+
+}
+
+.quote{
+
+margin-top:35px;
+
+font-size:22px;
+
+color:white;
+
+line-height:40px;
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:40px;
+
+padding:18px 45px;
+
+background:#ff4f8b;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:50px;
+
+font-size:22px;
+
+font-weight:bold;
+
+transition:.4s;
+
+}
+
+.btn:hover{
+
+background:#ff2d72;
+
+}
+
+.note{
+
+margin-top:30px;
+
+font-size:18px;
+
+color:#fff;
+
+}
+
+</style>
+
+</head>
+
+<body>
+<div class="hearts">
+
+    <span>💖</span>
+    <span>💕</span>
+    <span>💗</span>
+    <span>💝</span>
+    <span>💜</span>
+    <span>❤️</span>
+    <span>💘</span>
+    <span>💞</span>
+
+</div>
+
+<div class="card">
+
+<div class="title">
+
+🎁 Birthday Countdown 🎁
+
+</div>
+
+<div class="name">
+
+Hello {{ name }} ❤️
+
+</div>
+
+{% if days_left == 0 %}
+
+<div class="days">
+
+🎉 Today is your Birthday 🎂
+
+</div>
+
+<div class="quote">
+
+✨ Happy Birthday! 💖<br><br>
+
+Today is your special day.<br>
+
+May all your dreams come true.
+
+</div>
+
+<a
+class="btn"
+href="{{ url_for('birthday', token=token) }}"
+>
+
+🎂 Open Birthday Celebration
+
+</a>
+
+{% else %}
+
+<div class="days">
+
+🎂 Only {{ days_left }} Day(s) Left
+
+</div>
+
+<div class="quote">
+
+🌸 Every sunrise brings you closer to your birthday.<br><br>
+
+Keep smiling 😊<br>
+
+Your magical day is coming soon ❤️
+
+</div>
+
+<div class="note">
+
+📧 A birthday reminder has already been sent to your email.
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Your Details 💖</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+overflow:hidden;
+
+background:
+linear-gradient(
+180deg,
+#12001f,
+#2b0055,
+#6c00b5,
+#ff5fae
+);
+
+}
+
+.card{
+
+width:680px;
+max-width:92%;
+
+padding:55px;
+
+border-radius:35px;
+
+text-align:center;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.18);
+
+backdrop-filter:blur(12px);
+
+box-shadow:
+0 0 35px rgba(255,255,255,.2),
+0 0 70px rgba(255,79,163,.45);
+
+}
+
+.title{
+
+font-family:'Great Vibes',cursive;
+
+font-size:70px;
+
+color:#ffe3f4;
+
+margin-bottom:20px;
+
+text-shadow:
+0 0 10px #ff4fa3,
+0 0 30px #ff4fa3;
+
+}
+
+.subtitle{
+
+color:white;
+
+font-size:20px;
+
+line-height:34px;
+
+margin-bottom:30px;
+
+}
+
+input{
+
+width:100%;
+
+padding:18px;
+
+margin-top:20px;
+
+border:none;
+
+outline:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+text-align:center;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:22px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+color:white;
+
+background:
+linear-gradient(
+45deg,
+#ff4f8b,
+#ff9fd5
+);
+
+transition:.4s;
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 20px white,
+0 0 40px pink;
+
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-120px;
+
+font-size:40px;
+
+animation:float 12s linear infinite;
+
+}
+
+.h1{left:5%;}
+.h2{left:20%;animation-delay:2s;}
+.h3{left:40%;animation-delay:4s;}
+.h4{left:65%;animation-delay:1s;}
+.h5{left:85%;animation-delay:3s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+10%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-130vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="heart h1">💖</div>
+<div class="heart h2">💕</div>
+<div class="heart h3">💗</div>
+<div class="heart h4">💘</div>
+<div class="heart h5">💝</div>
+
+<div class="card">
+
+<div class="title">
+
+Your Details 💖
+
+</div>
+
+<div class="subtitle">
+
+Just one more step before your magical birthday journey ✨
+
+</div>
+
+<form action="/save" method="POST">
+
+<input
+type="hidden"
+name="email"
+value="{{ email }}"
+>
+
+<input
+type="text"
+name="name"
+placeholder="💖 Enter Your Name"
+required
+>
+
+<input
+type="date"
+name="dob"
+required
+>
+
+<button type="submit">
+
+🎁 Register Now
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>

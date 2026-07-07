@@ -1,0 +1,468 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+width:100%;
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+180deg,
+#12001f,
+#2b0055,
+#6c00b5,
+#ff5fae
+);
+
+}
+
+/* Animated Stars */
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:200%;
+height:200%;
+
+background:
+radial-gradient(circle,#ffffff66 1px,transparent 1px);
+
+background-size:50px 50px;
+
+animation:stars 70s linear infinite;
+
+opacity:.35;
+
+}
+
+@keyframes stars{
+
+from{
+transform:translateY(0);
+}
+
+to{
+transform:translateY(-1000px);
+}
+
+}
+
+.container{
+
+position:relative;
+
+z-index:10;
+
+width:900px;
+max-width:92%;
+
+text-align:center;
+
+}
+
+.title{
+
+font-size:52px;
+
+font-family:'Great Vibes',cursive;
+
+color:#ffe4f4;
+
+text-shadow:
+0 0 10px #ff5fae,
+0 0 25px #ff5fae;
+
+}
+
+.main-title{
+
+margin-top:15px;
+
+font-size:88px;
+
+font-family:'Great Vibes',cursive;
+
+font-weight:bold;
+
+color:white;
+
+text-shadow:
+
+0 0 15px #ff3d92,
+0 0 35px #ff3d92,
+0 0 65px #ff3d92;
+
+animation:titleGlow 2s infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+from{
+
+transform:scale(1);
+
+}
+
+to{
+
+transform:scale(1.03);
+
+}
+
+}
+
+.subtitle{
+
+margin-top:30px;
+
+font-size:24px;
+
+line-height:42px;
+
+color:white;
+
+padding:0 20px;
+
+}
+
+.buttons{
+
+margin-top:50px;
+
+}
+
+.start-btn{
+
+padding:18px 55px;
+
+font-size:24px;
+
+font-weight:bold;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+color:white;
+
+background:
+linear-gradient(
+45deg,
+#ff3d92,
+#ff9fd5
+);
+
+transition:.4s;
+
+}
+
+.start-btn:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+
+0 0 20px white, 
+
+0 0 40px pink;
+
+}
+/* ========================= */
+/* Floating Hearts */
+/* ========================= */
+
+.heart,
+.balloon,
+.gift,
+.star{
+
+position:absolute;
+
+bottom:-120px;
+
+user-select:none;
+
+pointer-events:none;
+
+}
+
+.heart{
+
+font-size:40px;
+
+animation:floatHeart 14s linear infinite;
+
+}
+
+.h1{left:5%;}
+.h2{left:18%;animation-delay:2s;}
+.h3{left:35%;animation-delay:5s;}
+.h4{left:55%;animation-delay:1s;}
+.h5{left:75%;animation-delay:4s;}
+.h6{left:92%;animation-delay:7s;}
+
+@keyframes floatHeart{
+
+0%{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-130vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+
+/* ========================= */
+/* Balloons */
+/* ========================= */
+
+.balloon{
+
+font-size:55px;
+
+animation:floatBalloon 18s linear infinite;
+
+}
+
+.b1{left:10%;}
+.b2{left:28%;animation-delay:3s;}
+.b3{left:50%;animation-delay:6s;}
+.b4{left:72%;animation-delay:1s;}
+.b5{left:90%;animation-delay:5s;}
+
+@keyframes floatBalloon{
+
+0%{
+
+transform:
+translateY(0);
+
+}
+
+100%{
+
+transform:
+translateY(-135vh);
+
+}
+
+}
+
+/* ========================= */
+/* Gifts */
+/* ========================= */
+
+.gift{
+
+font-size:48px;
+
+animation:
+giftMove 20s linear infinite,
+giftRotate 4s linear infinite;
+
+}
+
+.g1{left:15%;}
+.g2{left:48%;animation-delay:4s;}
+.g3{left:82%;animation-delay:8s;}
+
+@keyframes giftMove{
+
+0%{
+
+transform:
+translateY(0);
+
+opacity:0;
+
+}
+
+10%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:
+translateY(-130vh);
+
+opacity:0;
+
+}
+
+}
+
+@keyframes giftRotate{
+
+0%{
+
+rotate:0deg;
+
+}
+
+100%{
+
+rotate:360deg;
+
+}
+
+}
+
+/* ========================= */
+/* Stars */
+/* ========================= */
+
+.star{
+
+font-size:28px;
+
+color:white;
+
+animation:
+twinkle 2s infinite alternate,
+starFloat 25s linear infinite;
+
+}
+
+.s1{
+
+left:12%;
+top:10%;
+
+}
+
+.s2{
+
+left:40%;
+top:18%;
+
+}
+
+.s3{
+
+left:68%;
+top:12%;
+
+}
+
+.s4{
+
+left:88%;
+top:22%;
+
+}
+
+@keyframes twinkle{
+
+from{
+
+opacity:.3;
+
+transform:scale(.8);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1.3);
+
+}
+
+}
+
+@keyframes starFloat{
+
+0%{
+
+transform:
+translateY(0);
+
+}
+
+100%{
+
+transform:
+translateY(-50px);
+
+}
+
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width:768px){
+
+.main-title{
+
+font-size:55px;
+
+}
+
+.title{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+line-height:30px;
+
+}
+
+.start-btn{
+
+font-size:18px;
+
+padding:15px 35px;
+
+}
+
+}

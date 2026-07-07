@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Birthday Surprise</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            background:linear-gradient(135deg,#ff9ad5,#d291ff,#8e9dff);
+            background-size:400% 400%;
+            animation:bgMove 12s ease infinite;
+            position:relative;
+        }
+
+        @keyframes bgMove{
+            0%{background-position:0% 50%;}
+            50%{background-position:100% 50%;}
+            100%{background-position:0% 50%;}
+        }
+
+        .heart{
+            position:absolute;
+            color:rgba(255,255,255,.35);
+            font-size:24px;
+            animation:float 10s linear infinite;
+        }
+
+        .heart:nth-child(1){left:8%;animation-delay:0s;}
+        .heart:nth-child(2){left:20%;animation-delay:2s;font-size:18px;}
+        .heart:nth-child(3){left:35%;animation-delay:4s;}
+        .heart:nth-child(4){left:55%;animation-delay:1s;font-size:30px;}
+        .heart:nth-child(5){left:70%;animation-delay:5s;}
+        .heart:nth-child(6){left:88%;animation-delay:3s;font-size:20px;}
+
+        @keyframes float{
+            from{
+                transform:translateY(100vh) scale(.8);
+                opacity:0;
+            }
+            20%{
+                opacity:1;
+            }
+            to{
+                transform:translateY(-120px) scale(1.2);
+                opacity:0;
+            }
+        }
+
+        .card{
+            width:420px;
+            max-width:92%;
+            background:rgba(255,255,255,.18);
+            backdrop-filter:blur(18px);
+            border:1px solid rgba(255,255,255,.25);
+            border-radius:28px;
+            padding:40px;
+            box-shadow:0 20px 60px rgba(0,0,0,.25);
+            animation:fadeUp .8s ease;
+        }
+
+        @keyframes fadeUp{
+            from{
+                opacity:0;
+                transform:translateY(40px);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+        }
+
+        .emoji{
+            text-align:center;
+            font-size:55px;
+            margin-bottom:10px;
+        }
+
+        h1{
+            text-align:center;
+            color:#fff;
+            margin-bottom:10px;
+            font-size:30px;
+        }
+
+        .subtitle{
+            text-align:center;
+            color:#fff;
+            opacity:.95;
+            margin-bottom:30px;
+            line-height:1.7;
+            font-size:15px;
+        }
+
+        label{
+            color:#fff;
+            display:block;
+            margin-bottom:8px;
+            margin-top:18px;
+            font-weight:500;
+        }
+
+        input{
+            width:100%;
+            padding:14px 16px;
+            border:none;
+            outline:none;
+            border-radius:14px;
+            background:rgba(255,255,255,.92);
+            font-size:15px;
+            transition:.3s;
+        }
+
+        input:focus{
+            transform:scale(1.02);
+            box-shadow:0 0 18px rgba(255,255,255,.55);
+        }
+
+        button{
+            width:100%;
+            margin-top:30px;
+            padding:15px;
+            border:none;
+            border-radius:50px;
+            cursor:pointer;
+            font-size:17px;
+            font-weight:600;
+            color:white;
+            background:linear-gradient(90deg,#ff4fa1,#9b5cff);
+            transition:.3s;
+            box-shadow:0 10px 30px rgba(255,0,140,.35);
+        }
+
+        button:hover{
+            transform:translateY(-3px);
+            box-shadow:0 15px 40px rgba(255,0,140,.45);
+        }
+
+        .login-link{
+            margin-top:25px;
+            text-align:center;
+            color:#fff;
+            font-size:14px;
+        }
+
+        .login-link a{
+            color:#fff;
+            text-decoration:none;
+            font-weight:600;
+            border-bottom:2px solid rgba(255,255,255,.7);
+            transition:.3s;
+        }
+
+        .login-link a:hover{
+            color:#ffe66d;
+            border-color:#ffe66d;
+        }
+
+        @media(max-width:480px){
+
+            .card{
+                padding:30px 24px;
+            }
+
+            h1{
+                font-size:25px;
+            }
+
+            .subtitle{
+                font-size:14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="heart">💖</div>
+    <div class="heart">💜</div>
+    <div class="heart">💕</div>
+    <div class="heart">💗</div>
+    <div class="heart">💝</div>
+    <div class="heart">💞</div>
+
+    <div class="card">
+
+        <div class="emoji">🎂</div>
+
+        <h1>Birthday Surprise</h1>
+
+        <p class="subtitle">
+            Register once and receive beautiful birthday countdown emails,
+            lovely wishes, and a magical surprise waiting just for you.
+        </p>
+
+        <form action="{{ url_for('save') }}" method="POST">
+
+            <label>👤 Full Name</label>
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                required
+            >
+
+            <label>📧 Email Address</label>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label>🎉 Date of Birth</label>
+
+            <input
+                type="date"
+                name="dob"
+                required
+            >
+
+            <button type="submit">
+                💝 Register & Start Countdown
+            </button>
+
+        </form>
+
+        <div class="login-link">
+            Already Registered?
+            <a href="{{ url_for('login') }}">
+                Login
+            </a>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
