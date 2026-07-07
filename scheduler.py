@@ -39,14 +39,15 @@ def daily_mail_job(app):
 
             # Default countdown page
             surprise_link = (
-                f"http://127.0.0.1:5000/countdown/{user.token}"
-            )
+    f"https://birthday-surprise-project.onrender.com/countdown/{user.token}"
+)
+            
 
             # Birthday day → Birthday page
             if days_left == 0:
                 surprise_link = (
-                    f"http://127.0.0.1:5000/birthday/{user.token}"
-                )
+    f"https://birthday-surprise-project.onrender.com/birthday/{user.token}"
+)
 
             try:
 
