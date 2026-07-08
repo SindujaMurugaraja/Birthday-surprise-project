@@ -113,6 +113,9 @@ def save():
     existing_user = User.query.filter_by(
         email=email
     ).first()
+    print("Entered Email:", email)
+    print("Found User:", existing_user)
+    print("=" * 50)
 
     if existing_user:
 
