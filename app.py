@@ -90,7 +90,6 @@ def details():
         email=email
     )
 
-
 # ==========================================
 # SAVE USER
 # ==========================================
@@ -105,20 +104,16 @@ def save():
     if not name or not email or not dob:
         return "<h2>Missing Details!</h2>"
 
-    dob = datetime.strptime(
-        dob,
-        "%Y-%m-%d"
-    ).date()
+    dob = datetime.strptime(dob, "%Y-%m-%d").date()
 
-    existing_user = User.query.filter_by(
-        email=email
-    ).first()
     print("Entered Email:", email)
+
+    existing_user = User.query.filter_by(email=email).first()
+
     print("Found User:", existing_user)
     print("=" * 50)
 
     if existing_user:
-
         return """
         <h2 style="
         text-align:center;
@@ -157,9 +152,7 @@ def save():
             dob.day
         )
 
-    days_left = (
-        birthday - today
-    ).days
+    days_left = (birthday - today).days
 
     surprise_link = url_for(
         "countdown",
@@ -167,26 +160,24 @@ def save():
         _external=True
     )
 
- #try:
-#       send_birthday_mail(
-#            app=app,
-#            receiver_email=email,
-#            receiver_name=name,
-#            surprise_link=surprise_link,
-#            days_left=days_left
-#        )
-#
- #       print("✅ First Mail Sent Successfully")
-#
-#    except Exception as e:
-#
-#       print("❌ Mail Sending Failed")
-#       print(e)
-#
- #   return redirect(
-#        url_for("wait")
-#    )
+    try:
 
+        send_birthday_mail(
+            app=app,
+            receiver_email=email,
+            receiver_name=name,
+            surprise_link=surprise_link,
+            days_left=days_left
+        )
+
+        print("✅ First Mail Sent Successfully")
+
+    except Exception as e:
+
+        print("❌ Mail Sending Failed")
+        print(e)
+
+    return redirect(url_for("wait"))
 
 # ==========================================
 # WAIT PAGE
