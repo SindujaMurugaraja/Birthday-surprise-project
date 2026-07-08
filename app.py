@@ -167,26 +167,25 @@ def save():
         _external=True
     )
 
-    try:
-
-        send_birthday_mail(
-            app=app,
-            receiver_email=email,
-            receiver_name=name,
-            surprise_link=surprise_link,
-            days_left=days_left
-        )
-
-        print("✅ First Mail Sent Successfully")
-
-    except Exception as e:
-
-        print("❌ Mail Sending Failed")
-        print(e)
-
-    return redirect(
-        url_for("wait")
-    )
+ #try:
+#       send_birthday_mail(
+#            app=app,
+#            receiver_email=email,
+#            receiver_name=name,
+#            surprise_link=surprise_link,
+#            days_left=days_left
+#        )
+#
+ #       print("✅ First Mail Sent Successfully")
+#
+#    except Exception as e:
+#
+#       print("❌ Mail Sending Failed")
+#       print(e)
+#
+ #   return redirect(
+#        url_for("wait")
+#    )
 
 
 # ==========================================
